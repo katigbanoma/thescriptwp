@@ -101,235 +101,77 @@
                     <!--- This segment is meant for my slider -->
 
                     <div class="clearfix">
-                        <div class="mh-widget-col-1 mh-sidebar mh-home-sidebar mh-home-area-3">
-                            <div id="mh_magazine_custom_posts-3" class="mh-widget mh-home-3 mh_magazine_custom_posts">
+                        <div class="mh-widget-col-1 mh-sidebar mh-home-sidebar mh-margin-left mh-home-area-4">
+
+                            <?php 
+                                $args = array('orderby' => 'id');
+                                $categories = get_categories($args);
+                                foreach ($categories as $cat) :
+                            ?>
+                                                                
+                                <?php 
+                                    $args = array( 'posts_per_page' => 1, 'cat' => $cat->name );
+                                    $the_query = new WP_Query( $args );
+                                    
+                                    if($the_query->have_posts() ) : 
+                                    while ( $the_query->have_posts() ) : $the_query->the_post();
+                                ?>
+
+                            <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
                                 <h4 class="mh-widget-title">
                                     <span class="mh-widget-title-inner">
-                                <a href="single.php" class="mh-widget-title-link">Local</a>
-                                <span style="padding:15px;">
-                                  <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                    <a href="more.php" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                  </div>
-                                </span>
+                                        <a href="single.php" class="mh-widget-title-link"><?php echo strtoupper($cat->name) ?></a>
+                                    </span>
+                                    <span style="padding:15px;">
+                                        <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
+                                        <a href="#" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
+                                        </div>
                                     </span>
                                 </h4>
                                 <ul class="mh-custom-posts-widget clearfix">
-                                    <li class="mh-custom-posts-item mh-custom-posts-large clearfix post-170 post type-post status-publish format-standard has-post-thumbnail category-politics tag-debate tag-government tag-law tag-legislation tag-politics">
+                                    <li class="mh-custom-posts-item mh-custom-posts-large clearfix">
                                         <div class="mh-custom-posts-large-inner clearfix">
                                             <figure class="mh-custom-posts-thumb-xl">
-                                                <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="single.php">
-                                                    <div class="bg-content" style="background-image: url('<?php echo get_stylesheet_directory_uri()?>/images/local.png')"></div>
+                                                <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_title() ?>">
+                                                    <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_uri(); ?>')"></div>
                                                 </a>
                                             </figure>
                                             <div class="mh-custom-posts-content">
                                                 <div class="mh-custom-posts-header">
                                                     <h3 class="mh-custom-posts-xl-title">
-                                                        <a href="single.php" title="Laoreet dolore magna aliquam erat vol magna aliquyam">
-                                          Maitama Sule: Osinbajo Visits Kano, Condoles With Residents
-                                        </a></h3>
-                                                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
-                                          <a href="#">Oct 11, 2015</a></span> <span class="entry-meta-comments"><i class="fa fa-comment-o"></i>
-                                            <a href="#" class="mh-comment-count-link" >0</a></span></div>
-                                                </div>
-                                                <div class="mh-excerpt">
-                                                    He said this during a one-day condolence visit to Kano State where he noted that he met the late politician for the first
-                                                    time when he (Osinbajo)
-                                                    <a class="mh-excerpt-more" href="#" title="Laoreet dolore magna aliquam erat vol magna aliquyam">[...]</a></div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <h4 class="mh-widget-title">
-                                        <span class="mh-widget-title-inner">
-                                          <a href="single.php" class="mh-widget-title-link">Health</a>
-                                          <span style="padding:15px;">
-                                            <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                              <a href="more.php" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                            </div>
-                                          </span>
-                                        </span>
-                                    </h4>
-                                    <ul class="mh-custom-posts-widget clearfix">
-                                        <li class="mh-custom-posts-item mh-custom-posts-large clearfix post-170 post type-post status-publish format-standard has-post-thumbnail category-politics tag-debate tag-government tag-law tag-legislation tag-politics">
-                                            <div class="mh-custom-posts-large-inner clearfix">
-                                                <figure class="mh-custom-posts-thumb-xl">
-                                                    <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="single.php" title="Laoreet dolore magna aliquam erat vol magna aliquyam">
-                                                        <div class="bg-content" style="background-image: url('<?php echo get_stylesheet_directory_uri()?>/images/health.png')"></div>
-                                                    </a>
-                                                </figure>
-                                                <div class="mh-custom-posts-content">
-                                                    <div class="mh-custom-posts-header">
-                                                        <h3 class="mh-custom-posts-xl-title"> <a href="single.php" title="Laoreet dolore magna aliquam erat vol magna aliquyam">
-                                                  Ogun Govt. Shuts Over 180 Illegal Health Facilities </a></h3>
-                                                        <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
-                                                    <a href="#">Oct 11, 2015</a></span>
-                                                            <span class="entry-meta-comments">
-                                                      <i class="fa fa-comment-o"></i>
-                                                      <a href="#" class="mh-comment-count-link" >0</a>
-                                                    </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mh-excerpt">
-                                                        In a notice to commercial lenders, the financial regulator said the dollar auction would be both for spot and forward transactions,
-                                                        to be settled
-                                                        <a class="mh-excerpt-more" href="#" title="Laoreet dolore magna aliquam erat vol magna aliquyam">[...]</a></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <h4 class="mh-widget-title">
-                                            <span class="mh-widget-title-inner">
-                                                <a href="single.php" class="mh-widget-title-link">Economy</a>
-                                                <span style="padding:15px;">
-                                                  <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                                    <a href="more.php" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                                  </div>
-                                                </span>
-                                            </span>
-                                        </h4>
-                                        <ul class="mh-custom-posts-widget clearfix">
-                                            <li class="mh-custom-posts-item mh-custom-posts-large clearfix post-170 post type-post status-publish format-standard has-post-thumbnail category-politics tag-debate tag-government tag-law tag-legislation tag-politics">
-                                                <div class="mh-custom-posts-large-inner clearfix">
-                                                    <figure class="mh-custom-posts-thumb-xl">
-                                                        <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="single.php" title="Laoreet dolore magna aliquam erat vol magna aliquyam">
-                                                            <div class="bg-content" style="background-image: url('<?php echo get_stylesheet_directory_uri()?>/images/economy.png')"></div>
+                                                        <a href="<?php echo get_permalink(); ?>" title="Esse molestie consequat vel illum dolore eu feugiat">
+                                                            <?php get_title() ; ?>
                                                         </a>
-                                                    </figure>
-                                                    <div class="mh-custom-posts-content">
-                                                        <div class="mh-custom-posts-header">
-                                                            <h3 class="mh-custom-posts-xl-title">
-                                                                <a href="single.php" title="Laoreet dolore magna aliquam erat vol magna aliquyam">
-                                                            CBN Plans $100m Sale At Special Auction</a></h3>
-                                                            <div class="mh-meta entry-meta"> <span class="entry-meta-date updated">
-                                                              <i class="fa fa-clock-o"></i><a href="#">Oct 11, 2015</a></span>
-                                                                <span class="entry-meta-comments"><i class="fa fa-comment-o"></i>
-                                                                <a href="#" class="mh-comment-count-link" >0</a>
-                                                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mh-excerpt">
-                                                            In a notice to commercial lenders, the financial regulator said the dollar auction would be both for spot and forward transactions,
-                                                            to be settled
-                                                            <a class="mh-excerpt-more" href="#" title="Laoreet dolore magna aliquam erat vol magna aliquyam">[...]</a></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                            </div>
-                        </div>
-                        <div class="mh-widget-col-1 mh-sidebar mh-home-sidebar mh-margin-left mh-home-area-4">
-                            <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
-                                <h4 class="mh-widget-title">
-                                    <span class="mh-widget-title-inner">
-                                                        <a href="single.php" class="mh-widget-title-link">Politics</a>
-                                                      </span>
-                                    <span style="padding:15px;">
-                                                        <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                                          <a href="more.php" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                                        </div>
-                                                      </span>
-                                </h4>
-                                <ul class="mh-custom-posts-widget clearfix">
-                                    <li class="mh-custom-posts-item mh-custom-posts-large clearfix post-52 post type-post status-publish format-video has-post-thumbnail category-economy tag-city tag-economy tag-europe tag-financial tag-london tag-uk post_format-post-format-video">
-                                        <div class="mh-custom-posts-large-inner clearfix">
-                                            <figure class="mh-custom-posts-thumb-xl">
-                                                <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                    <div class="bg-content" style="background-image: url('<?php echo get_stylesheet_directory_uri()?>/images/politics.png')"></div>
-                                                </a>
-                                            </figure>
-                                            <div class="mh-custom-posts-content">
-                                                <div class="mh-custom-posts-header">
-                                                    <h3 class="mh-custom-posts-xl-title"> <a href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                                  Saraki’s CCT acquittal: Fed Govt Completes record transmission. </a>
                                                     </h3>
-                                                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
-                                                                  <a href="#">Oct 12, 2015</a></span> <span class="entry-meta-comments"><i class="fa fa-comment-o"></i>
-                                                                    <a href="#" class="mh-comment-count-link" >0</a></span></div>
+                                                    <div class="mh-meta entry-meta">
+                                                        <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
+                                                            <a href="#"><?php echo get_post_time('F j, Y')?></a>
+                                                        </span>
+                                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link"><?php echo wp_count_comments() ?></a></span>
+                                                    </div>
                                                 </div>
                                                 <div class="mh-excerpt">
-                                                    The office of the Attorney General of the Federation (AGF) yesterday completed the transmission of record of proceedings
-                                                    <a class="mh-excerpt-more" href="#" title="Esse molestie consequat vel illum dolore eu feugiat">[...]</a></div>
+                                                    <?php the_excerpt(); ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <h4 class="mh-widget-title">
-                                        <span class="mh-widget-title-inner">
-                                                                  <a href="single.php" class="mh-widget-title-link">Entertainment</a>
-                                                                </span>
-                                        <span style="padding:15px;">
-                                                                  <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                                                    <a href="more.php" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                                                  </div>
-                                                                </span>
-                                    </h4>
-                                    <ul class="mh-custom-posts-widget clearfix">
-                                        <li class="mh-custom-posts-item mh-custom-posts-large clearfix post-52 post type-post status-publish format-video has-post-thumbnail category-economy tag-city tag-economy tag-europe tag-financial tag-london tag-uk post_format-post-format-video">
-                                            <div class="mh-custom-posts-large-inner clearfix">
-                                                <figure class="mh-custom-posts-thumb-xl">
-                                                    <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                        <div class="bg-content" style="background-image: url('<?php echo get_stylesheet_directory_uri()?>/images/entertainments.png')"></div>
-                                                    </a>
-                                                </figure>
-                                                <div class="mh-custom-posts-content">
-                                                    <div class="mh-custom-posts-header">
-                                                        <h3 class="mh-custom-posts-xl-title">
-                                                            <a href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                                              What is my crime? Harrysong asks after getting sued </a></h3>
-                                                        <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#">Oct 12, 2015</a></span>
-                                                            <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" >0</a></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mh-excerpt">
-                                                        The pair has been at odds since Harrysong left Five Star Music, a record label owned by Kcee and his brother Emeka Okonkwo.
-                                                        Soso Soberekon,
-                                                        <a class="mh-excerpt-more" href="#" title="Esse molestie consequat vel illum dolore eu feugiat">[...]</a></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <h4 class="mh-widget-title">
-                                            <span class="mh-widget-title-inner">
-                                                                            <a href="single.php" class="mh-widget-title-link">Sports</a>
-                                                                          </span>
-                                            <span style="padding:15px;">
-                                                                            <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                                                              <a href="more.php" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                                                            </div>
-                                                                          </span>
-                                        </h4>
-                                        <ul class="mh-custom-posts-widget clearfix">
-                                            <li class="mh-custom-posts-item mh-custom-posts-large clearfix post-52 post type-post status-publish format-video has-post-thumbnail category-economy tag-city tag-economy tag-europe tag-financial tag-london tag-uk post_format-post-format-video">
-                                                <div class="mh-custom-posts-large-inner clearfix">
-                                                    <figure class="mh-custom-posts-thumb-xl">
-                                                        <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                            <div class="bg-content" style="background-image: url('<?php echo get_stylesheet_directory_uri()?>/images/sport.png')"></div>
-                                                        </a>
-                                                    </figure>
-                                                    <div class="mh-custom-posts-content">
-                                                        <div class="mh-custom-posts-header">
-                                                            <h3 class="mh-custom-posts-xl-title"> <a href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                                                    Man United agree £75m deal with Everton for Romelu Lukaku
-                                                                                  </a>
-                                                            </h3>
-                                                            <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
-                                                                                  <a href="#">Oct 12, 2015</a></span>                                                                    <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" >0</a></span></div>
-                                                        </div>
-                                                        <div class="mh-excerpt">
-                                                            The deal is expected to be finalized this weekend, Lukaku was Mourinho’s main summer transfer target, and now that the deal
-                                                            is in the bag,
-                                                            <a class="mh-excerpt-more" href="#" title="Esse molestie consequat vel illum dolore eu feugiat">[...]</a></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <style media="screen">
-                                            .bg-content {
-                                                width: 326px;
-                                                height: 245px;
-                                                background-size: cover;
-                                            }
-                                        </style>
+                                </ul>
+
                             </div>
                         </div>
                     </div>
+
+
+                    <style media="screen">
+                        .bg-content {
+                            width: 326px;
+                            height: 245px;
+                            background-size: cover;
+                        }
+                    </style>
+
+                    <!--Ad Section -->
                     <div class="textwidget">
                         <div class="mh-ad-spot">
                             <a target="_blank" href="#">
@@ -338,7 +180,8 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- TODO: Use Plugin Video Section -->
                 <div class="mh-widget-col-1 mh-sidebar mh-home-sidebar mh-home-area-6">
                     <div id="mh_magazine_youtube-2" class="mh-widget mh_magazine_youtube">
                         <h4 class="mh-widget-title"><span class="mh-widget-title-inner"><i class="fa fa-youtube-play"></i>Featured Video</span></h4>
@@ -387,30 +230,42 @@
                             </li>
                         </ul>
                     </div>
+
+
                     <div id="mh_magazine_custom_posts-2" class="mh-widget mh-home-6 mh_magazine_custom_posts">
                         <h4 class="mh-widget-title"><span class="mh-widget-title-inner">IN THE NEWS</span></h4>
                         <ul class="mh-custom-posts-widget clearfix">
-                            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
-                                <figure class="mh-custom-posts-thumb">
-                                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                        <img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/Picture3.png" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland" sizes="(max-width: 80px) 100vw, 80px" /> </a>
-                                </figure>
+
+                             <?php 
+                                $args = array( 'posts_per_page' => 4 );
+                                $the_query = new WP_Query( $args );
+                                
+                                if($the_query->have_posts() ) : 
+                                while ( $the_query->have_posts() ) : $the_query->the_post();
+                            ?>
+
+                            <li class="mh-custom-posts-item mh-custom-posts-small clearfix">
+                                <?php the_post_thumbnail('thumbnail' , ['class' => 'mh-custom-posts-thumb', 'title' => get_title()]) ?>
                                 <div class="mh-custom-posts-header">
-                                    <div class="mh-custom-posts-small-title"> <a href="#" title="Hendrerit in vulputate velit esse molestie consequat">Saraki’s CCT acquittal: Fed. Govt. Completes record transmission. </a></div>
-                                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#">Oct 4, 2015</a></span>
-                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" >6</a></span></div>
+                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_title() ?>"><?php echo get_title() ?> </a></div>
+                                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y')?></a></span>
+                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments() ?></a></span></div>
                                 </div>
                             </li>
-                            
+
+                            <?php endwhile; else: ?>
+                                <p>No News Today</p>
+                            <?php endif; wp_reset_postdata(); ?>
+
                         </ul>
                     </div>
 
-                    <?php include 'sidebar.php'; ?>
+                    <?php get_sidebar(); ?>
 
                   </div>
             </div>
         </div>
     </div>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>
 
