@@ -58,14 +58,11 @@ get_header(); ?>
 
                             <?php the_post_thumbnail() ?>
 
-                            <!--<figure class="entry-thumbnail"> <img src="images/berlin-678x381.jpg" alt="Berlin" title="Berlin" />
+                            <!--<figure class="entry-thumbnail"> <img src="<?php echo get_stylesheet_directory_uri()?>/images/berlin-678x381.jpg" alt="Berlin" title="Berlin" />
                                 <figcaption class="wp-caption-text">Image Credit: The Script Photography</figcaption>
                             </figure>-->
 
-                            <p><span class="mh-dropcap">T</span> he office of the Attorney General of the Federation (AGF) yesterday
-                                completed the transmission of record of proceedings at the Code of Conduct Tribunal (CCT)
-                                to the Court of Appeal in Abuja in relation to the appeal it filed against the acquittal
-                                of Senate President Bukola Saraki by the CCT.</p>
+                            <?php the_content(); ?>
 
                             <!-- TODO: Implement Social Plugin as a template -->
                             <div class="mh-social-bottom">
@@ -100,12 +97,12 @@ get_header(); ?>
 
                     <nav class="mh-post-nav mh-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
                         <!--<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-prev">
-                            <a href="#" rel="prev"><img width="80" height="60" src="images/protest-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Protest"  sizes="(max-width: 80px) 100vw, 80px" /><span>Previous</span>
+                            <a href="#" rel="prev"><img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/protest-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Protest"  sizes="(max-width: 80px) 100vw, 80px" /><span>Previous</span>
                                     <p>The incessant lynching of humans continue</p>
                                   </a>
                         </div>
                         <div class="mh-col-1-2 mh-post-nav-item mh-post-nav-next">
-                            <a href="#" rel="next"><img width="80" height="60" src="images/river_london-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="River London"  sizes="(max-width: 80px) 100vw, 80px" /><span>Next</span>
+                            <a href="#" rel="next"><img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/river_london-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="River London"  sizes="(max-width: 80px) 100vw, 80px" /><span>Next</span>
                                     <p>How the group called badoo started</p>
                                   </a>
                         </div>-->
@@ -169,7 +166,7 @@ get_header(); ?>
                         <div class="textwidget">
                             <div class="mh-ad-spot">
                                 <a href="#" target="_blank">
-                                        <img alt="MH Themes" src="images/ad-300x250-mh-magazine.png"> </a>
+                                        <img alt="MH Themes" src="<?php echo get_stylesheet_directory_uri()?>/images/ad-300x250-mh-magazine.png"> </a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +186,7 @@ get_header(); ?>
 
                             <li class="mh-nip-item post-115 post type-post status-publish format-standard has-post-thumbnail category-money tag-banks tag-euro tag-financial tag-money">
                                 <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Feugiat nulla facilisis at vero eros et accumsan">
-                                    <img width="80" height="60" src="images/wallet-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Wallet"  sizes="(max-width: 80px) 100vw, 80px" />
+                                    <img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/wallet-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Wallet"  sizes="(max-width: 80px) 100vw, 80px" />
                                     <div class="mh-nip-overlay"></div>
                                 </a>
                             </li>
@@ -208,7 +205,7 @@ get_header(); ?>
                         <div class="textwidget">
                             <div class="mh-ad-spot">
                                 <a href="#" target="_blank">
-                                  <img alt="MH Themes" src="images/ad-300x250-mh-magazine.png">
+                                  <img alt="MH Themes" src="<?php echo get_stylesheet_directory_uri()?>/images/ad-300x250-mh-magazine.png">
                                 </a>
                             </div>
                         </div>
