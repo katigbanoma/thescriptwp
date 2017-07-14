@@ -132,7 +132,7 @@
                                         <li class="mh-custom-posts-item mh-custom-posts-large clearfix">
                                             <div class="mh-custom-posts-large-inner clearfix">
                                                 <figure class="mh-custom-posts-thumb-xl">
-                                                    <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_title(); ?>">
+                                                    <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                                                         <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_uri(); ?>')"></div>
                                                     </a>
                                                 </figure>
@@ -140,7 +140,7 @@
                                                     <div class="mh-custom-posts-header">
                                                         <h3 class="mh-custom-posts-xl-title">
                                                             <a href="<?php echo get_permalink(); ?>" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                                <?php get_title() ; ?>
+                                                                <?php get_the_title() ; ?>
                                                             </a>
                                                         </h3>
                                                         <div class="mh-meta entry-meta">
