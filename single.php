@@ -56,24 +56,25 @@ get_header(); ?>
                         </div>
                         <div class="entry-content clearfix">
 
-                            <?php the_post_thumbnail() ?>
+                            <!--<div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>-->
 
-                            <!--<figure class="entry-thumbnail"> <img src="<?php echo get_stylesheet_directory_uri()?>/images/berlin-678x381.jpg" alt="Berlin" title="Berlin" />
+
+                            <figure class="entry-thumbnail"> <img src="<?php echo get_stylesheet_directory_uri()?>/images/berlin-678x381.jpg" alt="Berlin" title="Berlin" />
                                 <figcaption class="wp-caption-text">Image Credit: The Script Photography</figcaption>
-                            </figure>-->
+                            </figure>
 
                             <?php the_content(); ?>
 
                             <!-- TODO: Implement Social Plugin as a template -->
                             <div class="mh-social-bottom">
                                 <div class="mh-share-buttons clearfix">
-                                    <a class="mh-facebook" href="#" onclick="window.open('https://www.facebook.com/sharer.php?u=http%3A%2F%2Fdemo.mhthemes.com%2Fmagazine%2Ftempor-invidunt-ut-labore-et-dolore-magna-aliquyam%2F&amp;t=Laoreet+dolore+magna+aliquam+erat+vol+magna+aliquyam', 'facebookShare', 'width=626,height=436'); return false;"
+                                    <a class="mh-facebook" href="#" onclick="window.open('https://www.facebook.com/sharer.php?u=' . <?php url_encode(get_permalink()); ?>, 'facebookShare', 'width=626,height=436'); return false;"
                                         title="Share on Facebook"> <span class="mh-share-button"><i class="fa fa-facebook"></i></span> </a>
-                                    <a class="mh-twitter" href="#" onclick="window.open('https://twitter.com/share?text=Laoreet+dolore+magna+aliquam+erat+vol+magna+aliquyam:&amp;url=http%3A%2F%2Fdemo.mhthemes.com%2Fmagazine%2Ftempor-invidunt-ut-labore-et-dolore-magna-aliquyam%2F', 'twitterShare', 'width=626,height=436'); return false;"
+                                    <a class="mh-twitter" href="#" onclick="window.open('https://twitter.com/share?url=<?php url_encode(get_permalink()); ?>', 'twitterShare', 'width=626,height=436'); return false;"
                                         title="Tweet This Post"> <span class="mh-share-button"><i class="fa fa-twitter"></i></span> </a>
-                                    <a class="mh-pinterest" href="#" onclick="window.open('https://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdemo.mhthemes.com%2Fmagazine%2Ftempor-invidunt-ut-labore-et-dolore-magna-aliquyam%2F&amp;media=http://demo.mhthemes.com/magazine/wp-content/uploads/sites/16/2015/10/berlin.jpg&amp;description=Laoreet+dolore+magna+aliquam+erat+vol+magna+aliquyam', 'pinterestShare', 'width=750,height=350'); return false;"
+                                    <a class="mh-pinterest" href="#" onclick="window.open('https://pinterest.com/pin/create/button/?url=<?php url_encode(get_permalink()); ?>', 'pinterestShare', 'width=750,height=350'); return false;"
                                         title="Pin This Post"> <span class="mh-share-button"><i class="fa fa-pinterest"></i></span> </a>
-                                    <a class="mh-googleplus" href="#" onclick="window.open('https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=http%3A%2F%2Fdemo.mhthemes.com%2Fmagazine%2Ftempor-invidunt-ut-labore-et-dolore-magna-aliquyam%2F', 'googleShare', 'width=626,height=436'); return false;"
+                                    <a class="mh-googleplus" href="#" onclick="window.open('https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php url_encode(get_permalink()); ?>', 'googleShare', 'width=626,height=436'); return false;"
                                         title="Share on Google+" target="_blank"> <span class="mh-share-button"><i class="fa fa-google-plus"></i></span> </a>
                                     <a class="mh-email" href="#" title="Send this article to a friend" target="_blank"> <span class="mh-share-button"><i class="fa fa-envelope-o"></i></span> </a>
                                 </div>
@@ -184,9 +185,9 @@ get_header(); ?>
                                 while ( $the_query->have_posts() ) : $the_query->the_post();
                             ?>
 
-                            <li class="mh-nip-item post-115 post type-post status-publish format-standard has-post-thumbnail category-money tag-banks tag-euro tag-financial tag-money">
-                                <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Feugiat nulla facilisis at vero eros et accumsan">
-                                    <img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/wallet-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Wallet"  sizes="(max-width: 80px) 100vw, 80px" />
+                            <li class="mh-nip-item">
+                                <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="<?php echo get_the_title(); ?>">
+                                    <img width="80" height="60" src="<?php echo get_the_post_thumbnail_url() ?>" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Wallet"  sizes="(max-width: 80px) 100vw, 80px" />
                                     <div class="mh-nip-overlay"></div>
                                 </a>
                             </li>

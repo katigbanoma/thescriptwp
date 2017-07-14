@@ -87,7 +87,7 @@
         <ul class="mh-custom-posts-widget clearfix">
 
             <?php 
-                $args = array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  );
+                $args = array( 'posts_per_page' => 2, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  );
                 $the_query = new WP_Query( $args );
                 
                 if($the_query->have_posts() ) : 

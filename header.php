@@ -92,7 +92,24 @@
 
             <div class="mh-main-nav-wrap">
                 <nav class="mh-navigation mh-main-nav mh-container mh-container-inner clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                    <div class="menu-navigation-container">
+                       
+                       <?php
+                        $defaults = array(
+                        'theme_location'  => 'primary',
+                        'menu'            => 'default',
+                        'container_class' => 'menu-navigation-container',
+                        'menu_class'      => 'menu',
+                        'menu_id'         => 'menu-navigation',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'depth'           => 0,
+                        );
+
+                        wp_nav_menu( $defaults );
+
+                        ?>
+                                        
+                    <!--<div class="menu-navigation-container">
                         <ul id="menu-navigation" class="menu">
                             <li><a href="index.php">Home</a></li>
                             <li><a href="single.php">Politics</a></li>
@@ -109,7 +126,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
                 </nav>
             </div>
         </header>
