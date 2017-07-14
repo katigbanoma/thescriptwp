@@ -24,7 +24,7 @@
                                         $args = array( 'posts_per_page' => 1, 'cat' => $cat->term_id );
                                         $the_query = new WP_Query( $args );
                                         
-                                        if($the_query->have_posts() ) : 
+                                        if($the_query->have_posts() && has_post_thumbnail() ) : 
                                         while ( $the_query->have_posts() ) : $the_query->the_post();
                                     ?>
 
@@ -57,7 +57,6 @@
                                 </li>
 
                                 <?php endwhile; else: ?>
-                                    <p>No News Today</p>
                                 <?php 
                                     endif; 
                                     wp_reset_postdata(); 
@@ -225,7 +224,7 @@
                                     the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_the_title()) );
                                 ?>
                                 <div class="mh-custom-posts-header">
-                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_the_title(); ?>"><?php echo get_title() ?> </a></div>
+                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_the_title(); ?>"><?php echo get_the_title() ?> </a></div>
                                     <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y');?></a></span>
                                         <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments(); ?></a></span></div>
                                 </div>
