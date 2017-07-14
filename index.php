@@ -120,7 +120,7 @@
                             <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
                                 <h4 class="mh-widget-title">
                                     <span class="mh-widget-title-inner">
-                                        <a href="single.php" class="mh-widget-title-link"><?php echo strtoupper($cat->name) ?></a>
+                                        <a href="single.php" class="mh-widget-title-link"><?php echo strtoupper($cat->name); ?></a>
                                     </span>
                                     <span style="padding:15px;">
                                         <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
@@ -132,7 +132,7 @@
                                     <li class="mh-custom-posts-item mh-custom-posts-large clearfix">
                                         <div class="mh-custom-posts-large-inner clearfix">
                                             <figure class="mh-custom-posts-thumb-xl">
-                                                <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_title() ?>">
+                                                <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_title(); ?>">
                                                     <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_uri(); ?>')"></div>
                                                 </a>
                                             </figure>
@@ -145,9 +145,9 @@
                                                     </h3>
                                                     <div class="mh-meta entry-meta">
                                                         <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
-                                                            <a href="#"><?php echo get_post_time('F j, Y')?></a>
+                                                            <a href="#"><?php echo get_post_time('F j, Y'); ?></a>
                                                         </span>
-                                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link"><?php echo wp_count_comments() ?></a></span>
+                                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link"><?php echo wp_count_comments(); ?></a></span>
                                                     </div>
                                                 </div>
                                                 <div class="mh-excerpt">
@@ -175,7 +175,7 @@
                     <div class="textwidget">
                         <div class="mh-ad-spot">
                             <a target="_blank" href="#">
-                                <img width="680" height="130" style="height:130px;" src="<?php echo get_stylesheet_directory_uri()?>/images/banner1.png" />
+                                <img width="680" height="130" style="height:130px;" src="<?php echo get_stylesheet_directory_uri(); ?>/images/banner1.png" />
                               </a>
                         </div>
                     </div>
@@ -249,9 +249,9 @@
                                     the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_title()) );
                                 ?>
                                 <div class="mh-custom-posts-header">
-                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_title() ?>"><?php echo get_title() ?> </a></div>
-                                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y')?></a></span>
-                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments() ?></a></span></div>
+                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_title(); ?>"><?php echo get_title() ?> </a></div>
+                                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y');?></a></span>
+                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments(); ?></a></span></div>
                                 </div>
                             </li>
 
@@ -268,5 +268,4 @@
             </div>
         </div>
     </div>
-
 <?php get_footer(); ?>
