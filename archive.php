@@ -33,7 +33,7 @@
                             <article class="mh-posts-list-item clearfix">
                               <figure class="mh-posts-list-thumb">
                                   <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>">
-                                    <img width="326" height="245" src="<?php echo get_post_thumbnail(); ?>" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image" alt="Army" sizes="(max-width: 326px) 100vw, 326px" /> </a>
+                                    <img width="326" height="245" src="<?php echo get_the_post_thumbnail_url(); ?>" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image" alt="Army" sizes="(max-width: 326px) 100vw, 326px" /> </a>
                                   <div class="mh-image-caption mh-posts-list-caption"><?php the_archive_title(); ?>
 </div>
                               </figure>
