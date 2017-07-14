@@ -107,8 +107,6 @@
                                 $args = array('orderby' => 'id');
                                 $categories = get_categories($args);
                                 foreach ($categories as $cat) :
-
-                                print_r($cat);
                             ?>
                                                                 
                                 <?php 

@@ -42,7 +42,7 @@ get_header(); ?>
                                 </span>
                                 <span class="entry-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="<?php echo get_the_author_link() ?>"><?php get_the_author(); ?></a></span>
                                 <span class="entry-meta-categories"><i class="fa fa-folder-open-o"></i><a href="#" rel="category tag">Politics</a></span>
-                                <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments() ?></a></span></div>
+                                <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments()->total_comments ?></a></span></div>
                         </header>
 
                         <div id="text-3" class="mh-widget mh-posts-1 widget_text">
