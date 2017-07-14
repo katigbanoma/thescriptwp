@@ -97,7 +97,7 @@
             <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard  category-world tag-festival tag-sightseeing tag-travel tag-world">
                 <figure class="mh-custom-posts-thumb">
                     <a class="mh-thumb-icon mh-thumb-icon-small" href="<?php echo get_the_permalink()?>" title="<?php echo get_the_title(); ?>">
-                    <?php the_post_thumbnail('post-thumbnail', ['class' => 'attachment-mh-magazine-small size-mh-magazine-small', 'title' => 'Feature image']); ?>
+                    <?php the_post_thumbnail('post-thumbnail', array('class' => 'attachment-mh-magazine-small size-mh-magazine-small', 'title' => 'Feature image')); ?>
                     </a>
                 </figure>
                 <div class="mh-custom-posts-header">
