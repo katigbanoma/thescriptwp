@@ -11,42 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Script</title>
     <link rel="canonical" href="https://www.mhthemes.com/themes/mh/magazine/" />
-    <style type="text/css" id="custom-background-css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important
-        }
 
-        .flex-direction-nav {
-            display: none
-        }
-
-        body.custom-background {
-            background-image: url("<?php echo get_stylesheet_directory_uri()?>/images/background-mhmag1.jpg");
-            background-position: right top;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed
-        }
-
-        ul.social-links {
-            margin: 10px 0;
-        }
-
-        ul.social-links li {
-            padding: 0 10px;
-            color: white;
-        }
-    </style>
 </head>
+
+<?php wp_head(); ?>
 
 <body id="mh-mobile" class="home page-template page-template-template-homepage page-template-template-homepage-php page page-id-6 custom-background wp-custom-logo mh-boxed-layout mh-right-sb mh-loop-layout1 mh-widget-layout1 mh-loop-hide-caption">
     <div class="mh-container mh-container-outer">
@@ -155,37 +123,32 @@
                             <div class="mh-ticker-title mh-ticker-title-bottom"> BREAKING NEWS<i class="fa fa-chevron-right"></i></div>
                             <div class="mh-ticker-content mh-ticker-content-bottom">
                                 <ul id="mh-ticker-loop-bottom">
+
+                                    <?php
+                                        $args = array('post_type' => 'post','posts_per_page' => '4', 'tag' => 'breaking-news');
+                                        $the_query = new WP_Query( $args );
+
+                                        if($the_query->have_posts() ) : 
+                                        while ( $the_query->have_posts() ) : 
+                                            $the_query->the_post();
+                                    ?>
+
                                     <li class="mh-ticker-item mh-ticker-item-bottom">
                                         <a href="single.php" title="Consequat vel illum dolore eu feugiat">
-                        <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ Oct 17, 2015 ] </span>
-                        <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> Consequat vel illum dolore eu feugiat </span>
-                        <span class="mh-ticker-item-cat mh-ticker-item-cat-bottom"> <i class="fa fa-caret-right"></i> World </span>
-                      </a>
+                                            <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ <?php echo get_post_time('F j, Y')?> ] </span>
+                                            <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> <?php echo get_the_excerpt(); ?> </span>
+                                            <?php
+                                                $category = get_the_category(); 
+                                                $category_link = get_category_link($category[0]->cat_ID);
+                                                $category_name = $category[0]->cat_name;
+                                            ?>
+                                            <span class="mh-ticker-item-cat mh-ticker-item-cat-bottom"> <i class="fa fa-caret-right"></i> <?php echo $category_name ?> </span>
+                                        </a>
                                     </li>
-                                    <li class="mh-ticker-item mh-ticker-item-bottom">
-                                        <a href="single.php" title="Kalil delenit augue duis dolore hetura">
-                        <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ Oct 16, 2015 ] </span> <span class="mh-ticker-item-title mh-ticker-item-title-bottom">
-                          Kalil delenit augue duis dolore hetura </span> <span class="mh-ticker-item-cat mh-ticker-item-cat-bottom"> <i class="fa fa-caret-right"></i> Politics </span> </a>
-                                    </li>
-                                    <li class="mh-ticker-item mh-ticker-item-bottom">
-                                        <a href="single.php" title="Zaril delenit augue duis dolore te feugait nulla">
-                            <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ Oct 15, 2015 ] </span> <span class="mh-ticker-item-title mh-ticker-item-title-bottom">
-                              Zaril delenit augue duis dolore te feugait nulla </span> <span class="mh-ticker-item-cat mh-ticker-item-cat-bottom"> <i class="fa fa-caret-right"></i> World </span> </a>
-                                    </li>
-                                    <li class="mh-ticker-item mh-ticker-item-bottom">
-                                        <a href="single.php" title="Kasd gubergren no sea takimata sanctus est"> <span class="mh-ticker-item-date mh-ticker-item-date-bottom">
-                                [ Oct 13, 2015 ] </span> <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> Kasd gubergren no sea takimata sanctus est
-                                </span> <span class="mh-ticker-item-cat mh-ticker-item-cat-bottom"> <i class="fa fa-caret-right"></i> Business </span> </a>
-                                    </li>
-                                    <li class="mh-ticker-item mh-ticker-item-bottom">
-                                        <a href="single.php" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                  <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ Oct 12, 2015 ] </span> <span class="mh-ticker-item-title mh-ticker-item-title-bottom">
-                                    Esse molestie consequat vel illum dolore eu feugiat </span>
-                                    <span class="mh-ticker-item-cat mh-ticker-item-cat-bottom"> <i class="fa fa-caret-right"></i>
-                                      Economy
-                                    </span>
-                                  </a>
-                                    </li>
+
+                                    <?php endwhile; else: ?>
+                                        <p>No Breaking News</p>
+                                    <?php endif; wp_reset_postdata(); ?>
                                 </ul>
                             </div>
                         </div>

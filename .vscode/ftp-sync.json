@@ -1,0 +1,24 @@
+{
+    "remotePath": "/var/www/html/thescript/wp-content/themes/thescriptwp",
+    "host": "37.9.63.126",
+    "username": "tofunmi",
+    "password": "Available247?",
+    "port": 22,
+    "secure": false,
+    "protocol": "sftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}

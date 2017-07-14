@@ -79,102 +79,45 @@
 </div>
 
 <div class="mh-tab-buttons clearfix">
-    <a class="mh-tab-button" href=""> Most Read </a>
+    <a class="mh-tab-button" href="#"> Most Read </a>
 </div>
+
 <div class="" style="marign-top:20px;">
     <div id="mh_magazine_custom_posts-2" class="mh-widget mh-home-6 mh_magazine_custom_posts">
         <ul class="mh-custom-posts-widget clearfix">
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
+
+            <?php 
+                $args = array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  );
+                $the_query = new WP_Query( $args );
+                
+                if($the_query->have_posts() ) : 
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+            ?>
+
+            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard  category-world tag-festival tag-sightseeing tag-travel tag-world">
                 <figure class="mh-custom-posts-thumb">
-                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                  <img width="80" height="80" src="<?php echo get_stylesheet_directory_uri()?>/images/light_garland-80x60.jpg" style="height:80px;" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland" sizes="(max-width: 80px) 100vw, 80px" /> </a>
+                    <a class="mh-thumb-icon mh-thumb-icon-small" href="<?php echo get_the_permalink()?>" title="<?php echo get_the_title(); ?>">
+                    <?php the_post_thumbnail('post-thumbnail', ['class' => 'attachment-mh-magazine-small size-mh-magazine-small', 'title' => 'Feature image']); ?>
+                    </a>
                 </figure>
                 <div class="mh-custom-posts-header">
                     <div class="mh-custom-posts-small-title">
-                        <a href="#" title="Hendrerit in vulputate velit esse molestie consequat">CBN Plans $100m Sale At Special Auction </a></div>
+                        <a href="<?php echo get_the_permalink()?>" title="<?php echo get_the_title(); ?>"><?php echo get_the_excerpt(); ?></a></div>
                     <div class="mh-meta entry-meta">
                         <span class="entry-meta-date updated">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">In a notice to commercial lenders, the financial regulator said  <a href="#" style="color:red;">Read more</a></a>
-                                      </span>
-                    </div>
-                </div>
-            </li>
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
-                <figure class="mh-custom-posts-thumb">
-                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                      <img width="80" height="80" src="<?php echo get_stylesheet_directory_uri()?>/images/light_garland-80x60.jpg" style="height:80px;" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland"  sizes="(max-width: 80px) 100vw, 80px" /> </a>
-                </figure>
-                <div class="mh-custom-posts-header">
-                    <div class="mh-custom-posts-small-title"> <a href="#" title="Hendrerit in vulputate velit esse molestie consequat"> Man United agree £75m deal with Everton for Romelu Lukaku </a></div>
-                    <div class="mh-meta entry-meta">
-                        <span class="entry-meta-date updated">
-                                          <i class="fa fa-clock-o"></i>
-                                          <a href="#">The deal is expected to be finalized this weekend &nbsp&nbsp&nbsp&nbsp<a href="#" style="color:red;">Read more</a></a>
-                                        </span>
-                    </div>
-                </div>
-            </li>
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
-                <figure class="mh-custom-posts-thumb">
-                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                        <img width="80" height="80" src="<?php echo get_stylesheet_directory_uri()?>/images/light_garland-80x60.jpg" style="height:80px;" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland"  sizes="(max-width: 80px) 100vw, 80px" /> </a>
-                </figure>
-                <div class="mh-custom-posts-header">
-                    <div class="mh-custom-posts-small-title"> <a href="#" title="Hendrerit in vulputate velit esse molestie consequat">Ogun Govt. Shuts Over 180 Illegal Health Facilities </a></div>
-                    <div class="mh-meta entry-meta">
-                        <span class="entry-meta-date updated">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">In a notice to commercial lenders, the financial regulator said the &nbsp&nbsp&nbsp&nbsp<a href="#" style="color:red;">Read more</a></a>
-                                          </span>
-                    </div>
-                </div>
-            </li>
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
-                <figure class="mh-custom-posts-thumb">
-                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                          <img width="80" height="80" src="<?php echo get_stylesheet_directory_uri()?>/images/light_garland-80x60.jpg" style="height:80px;" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland" sizes="(max-width: 80px) 100vw, 80px" /> </a>
-                </figure>
-                <div class="mh-custom-posts-header">
-                    <div class="mh-custom-posts-small-title"> <a href="#" title="Hendrerit in vulputate velit esse molestie consequat"> What is my crime this time?’ Harrysong asks after getting sued </a></div>
-                    <div class="mh-meta entry-meta">
-                        <span class="entry-meta-date updated">
-                          <i class="fa fa-clock-o"></i>
-                          <a href="#">In a notice to commercial lenders, the financial regulator said &nbsp&nbsp&nbsp&nbsp<a href="#" style="color:red;">Read more</a></a>
+                            <i class="fa fa-clock-o"></i>
+                            <a href="<?php echo get_the_permalink()?>"><?php echo get_the_excerpt(); ?> <a href="#" style="color:red;">Read more</a></a>
                         </span>
                     </div>
                 </div>
             </li>
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
-                <figure class="mh-custom-posts-thumb">
-                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                          <img width="80" height="80" src="<?php echo get_stylesheet_directory_uri()?>/images/light_garland-80x60.jpg" style="height:80px;" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland" sizes="(max-width: 80px) 100vw, 80px" /> </a>
-                </figure>
-                <div class="mh-custom-posts-header">
-                    <div class="mh-custom-posts-small-title"> <a href="#" title="Hendrerit in vulputate velit esse molestie consequat"> What is my crime this time?’ Harrysong asks after getting sued </a></div>
-                    <div class="mh-meta entry-meta">
-                        <span class="entry-meta-date updated">
-                          <i class="fa fa-clock-o"></i>
-                          <a href="#">In a notice to commercial lenders, the financial regulator said &nbsp&nbsp&nbsp&nbsp<a href="#" style="color:red;">Read more</a></a>
-                        </span>
-                    </div>
-                </div>
-            </li>
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard has-post-thumbnail category-world tag-festival tag-sightseeing tag-travel tag-world">
-                <figure class="mh-custom-posts-thumb">
-                    <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="Hendrerit in vulputate velit esse molestie consequat">
-                                          <img width="80" height="80" src="<?php echo get_stylesheet_directory_uri()?>/images/light_garland-80x60.jpg" style="height:80px;" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Light Garland" sizes="(max-width: 80px) 100vw, 80px" /> </a>
-                </figure>
-                <div class="mh-custom-posts-header">
-                    <div class="mh-custom-posts-small-title"> <a href="#" title="Hendrerit in vulputate velit esse molestie consequat"> What is my crime this time?’ Harrysong asks after getting sued </a></div>
-                    <div class="mh-meta entry-meta">
-                        <span class="entry-meta-date updated">
-                          <i class="fa fa-clock-o"></i>
-                          <a href="#">In a notice to commercial lenders, the financial regulator said &nbsp&nbsp&nbsp&nbsp<a href="#" style="color:red;">Read more</a></a>
-                        </span>
-                    </div>
-                </div>
-            </li>
+
+            <?php endwhile; else: ?>
+
+                <p>No News Today</p>
+
+            <?php endif; wp_reset_postdata(); ?>
+
         </ul>
     </div>
 </div>
