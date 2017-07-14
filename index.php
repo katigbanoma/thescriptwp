@@ -120,11 +120,11 @@
                                 <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
                                     <h4 class="mh-widget-title">
                                         <span class="mh-widget-title-inner">
-                                            <a href="single.php" class="mh-widget-title-link"><?php echo strtoupper($cat->name); ?></a>
+                                            <a href="<?php echo get_category_link( $cat->term_id ); ?>" class="mh-widget-title-link"><?php echo strtoupper($cat->name); ?></a>
                                         </span>
                                         <span style="padding:15px;">
                                             <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                            <a href="#" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
+                                            <a href="<?php echo get_permalink() ;?>" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
                                             </div>
                                         </span>
                                     </h4>
