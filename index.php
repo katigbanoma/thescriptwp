@@ -245,7 +245,9 @@
                             ?>
 
                             <li class="mh-custom-posts-item mh-custom-posts-small clearfix">
-                                <?php the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_title()) ); ?>
+                                <?php 
+                                    the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_title()) );
+                                ?>
                                 <div class="mh-custom-posts-header">
                                     <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_title() ?>"><?php echo get_title() ?> </a></div>
                                     <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y')?></a></span>
@@ -268,4 +270,3 @@
     </div>
 
 <?php get_footer(); ?>
-
