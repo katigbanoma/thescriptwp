@@ -82,6 +82,7 @@
     <a class="mh-tab-button" href="#"> Most Read </a>
 </div>
 
+<!-- TODO: Make image stay side by side -->
 <div class="" style="marign-top:20px;">
     <div id="mh_magazine_custom_posts-2" class="mh-widget mh-home-6 mh_magazine_custom_posts">
         <ul class="mh-custom-posts-widget clearfix">
@@ -94,18 +95,14 @@
                 while ( $the_query->have_posts() ) : $the_query->the_post();
             ?>
 
-            <li class="mh-custom-posts-item mh-custom-posts-small clearfix post-140 post type-post status-publish format-standard  category-world tag-festival tag-sightseeing tag-travel tag-world">
-                <?php the_post_thumbnail('post-thumbnail', array('class' => 'attachment-mh-magazine-small size-mh-magazine-small', 'title' => 'Feature image')); ?>
-
+            <li class="mh-custom-posts-item mh-custom-posts-small clearfix">
+                <?php 
+                    the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_the_title()) );
+                ?>
                 <div class="mh-custom-posts-header">
-                    <div class="mh-custom-posts-small-title">
-                        <a href="<?php echo get_the_permalink()?>" title="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></a></div>
-                    <div class="mh-meta entry-meta">
-                        <span class="entry-meta-date updated">
-                            <i class="fa fa-clock-o"></i>
-                            <a href="<?php echo get_the_permalink()?>"><?php echo get_the_excerpt(); ?> <a href="#" style="color:red;">Read more</a></a>
-                        </span>
-                    </div>
+                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_the_title(); ?>"><?php echo get_the_title() ?> </a></div>
+                    <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y');?></a></span>
+                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments()->total_comments ?></a></span></div>
                 </div>
             </li>
 

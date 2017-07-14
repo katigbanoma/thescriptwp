@@ -69,7 +69,6 @@
                     <!--- This segment is meant for my slider -->
 
                     <div class="clearfix">
-                        <div class="mh-widget-col-1 mh-sidebar mh-home-sidebar mh-margin-left mh-home-area-4">
 
                             <?php 
                                 $args = array('orderby' => 'id');
@@ -84,6 +83,8 @@
                                     if($the_query->have_posts() ) : 
                                     while ( $the_query->have_posts() ) : $the_query->the_post();
                                 ?>
+
+                                <div class="mh-widget-col-1 mh-sidebar mh-home-sidebar mh-margin-left mh-home-area-4">
 
                                 <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
                                     <h4 class="mh-widget-title">
@@ -127,6 +128,8 @@
                                     </ul>
 
                                 </div>
+                                </div>
+
 
                                 <?php endwhile; else: ?>
                                     <p>No News Today</p>
@@ -135,7 +138,6 @@
                                     wp_reset_postdata(); 
                                     endforeach;
                                 ?>
-                        </div>
                     </div>
 
                     <style media="screen">
