@@ -226,7 +226,7 @@
                                 <div class="mh-custom-posts-header">
                                     <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_the_title(); ?>"><?php echo get_the_title() ?> </a></div>
                                     <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y');?></a></span>
-                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments(); ?></a></span></div>
+                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments()->total_comments ?></a></span></div>
                                 </div>
                             </li>
 
