@@ -253,7 +253,7 @@
 
                             <li class="mh-custom-posts-item mh-custom-posts-small clearfix">
                                 <?php 
-                                    the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_title()) );
+                                    the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_the_title()) );
                                 ?>
                                 <div class="mh-custom-posts-header">
                                     <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_title(); ?>"><?php echo get_title() ?> </a></div>
