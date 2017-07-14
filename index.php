@@ -133,7 +133,7 @@
                                             <div class="mh-custom-posts-large-inner clearfix">
                                                 <figure class="mh-custom-posts-thumb-xl">
                                                     <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                                                        <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_uri(); ?>')"></div>
+                                                        <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>
                                                     </a>
                                                 </figure>
                                                 <div class="mh-custom-posts-content">
