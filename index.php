@@ -107,10 +107,12 @@
                                 $args = array('orderby' => 'id');
                                 $categories = get_categories($args);
                                 foreach ($categories as $cat) :
+
+                                print_r($cat);
                             ?>
                                                                 
                                 <?php 
-                                    $args = array( 'posts_per_page' => 1, 'cat' => $cat->name );
+                                    $args = array( 'posts_per_page' => 1, 'cat' => $cat->term_id );
                                     $the_query = new WP_Query( $args );
                                     
                                     if($the_query->have_posts() ) : 

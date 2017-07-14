@@ -8,7 +8,7 @@
                     <!-- Breadcrumb  TODO-generate programmatically -->
                     <nav class="mh-breadcrumb">
                       <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                        <a href="index.php" itemprop="url">
+                        <a href="<?php echo get_home_url() ?>" itemprop="url">
                           <span itemprop="title">Home</span>
                         </a>
                         </span>
@@ -17,8 +17,6 @@
                         </span>
                         <?php the_archive_title(); ?>
                       </nav>
-
-
 
                     <header class="page-header">
                         <?php the_archive_title('<h1 class="page-title">', '</h1>' ); ?>
@@ -83,7 +81,7 @@
                     <div class="textwidget">
                       <div class="mh-ad-spot">
                         <a href="#" target="_blank">
-                          <img alt="MH Themes" src="images/ad-300x250-mh-magazine.png"> </a>
+                          <img alt="MH Themes" src="<?php echo get_stylesheet_directory_uri()?>/images/ad-300x250-mh-magazine.png"> </a>
                         </div>
                       </div>
                     </div>
@@ -95,7 +93,7 @@
                     <div class="textwidget">
                       <div class="mh-ad-spot">
                         <a href="#" target="_blank">
-                          <img alt="MH Themes" src="images/ad-300x250-mh-magazine.png"> </a>
+                          <img alt="MH Themes" src="<?php echo get_stylesheet_directory_uri()?>/images/ad-300x250-mh-magazine.png"> </a>
                         </div>
                       </div>
                     </div>
