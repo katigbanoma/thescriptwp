@@ -8,24 +8,40 @@
                 <div id="main-content" class="mh-content mh-home-content">
 
                     <!--- This egment is meant for my slider -->
+
                     <div id="mh_magazine_slider-2" class="mh-widget mh-home-2 mh-widget-col-2 mh_magazine_slider">
                         <div class="flexslider mh-slider-widget mh-slider-normal mh-slider-layout1">
 
                             <ul class="slides">
+
+                                 <?php 
+                                    $args = array('orderby' => 'id');
+                                    $categories = get_categories($args);
+                                    foreach ($categories as $cat) :
+                                ?>
+                                                                    
+                                    <?php 
+                                        $args = array( 'posts_per_page' => 1, 'cat' => $cat->term_id );
+                                        $the_query = new WP_Query( $args );
+                                        
+                                        if($the_query->have_posts() ) : 
+                                        while ( $the_query->have_posts() ) : $the_query->the_post();
+                                    ?>
+
                                 <li class="mh-slider-item">
                                     <article>
                                         <a href="#" title="">
-                                  <img width="678" height="381" src="<?php echo get_stylesheet_directory_uri()?>/images/singa.jpg" class="attachment-mh-magazine-content
-                                  size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />
-                                </a>
-                                        <div class="mh-image-caption mh-slider-category"> World</div>
+                                                    <img width="678" height="381" src="<?php echo get_the_post_thumbnail_url() ?>" class="attachment-mh-magazine-content
+                                                    size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />
+                                                    </a>
+                                        <div class="mh-image-caption mh-slider-category"> <?php echo strtoupper($cat->name); ?></div>
                                         <div class="mh-slider-caption">
                                             <div class="mh-slider-content">
                                                 <h3 class="mh-slider-title">
-                                                    <a href="#" title=""> Consequat vel illum dolore eu feugiat </a>
+                                                    <a href="#" title=""> <?php echo get_the_title() ?> </a>
                                                 </h3>
                                                 <div class="mh-excerpt">
-                                                    Tatvero accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                                    <?php echo get_the_excerpt(); ?>
                                                     <nav class="mh-social-icons mh-social-nav mh-social-nav-top clearfix">
                                                         <ul>Share
                                                             <li><a href="https://www.facebook.com/thescript"><i class="fa fa-mh-social"></i></a></li>
@@ -39,65 +55,18 @@
                                         </div>
                                     </article>
                                 </li>
-                                <li class="mh-slider-item">
-                                    <article>
-                                        <a href="#" title="">
-                                  <img width="678" height="381" src="<?php echo get_stylesheet_directory_uri()?>/images/singa.jpg" class="attachment-mh-magazine-content
-                                  size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />
-                                </a>
-                                        <div class="mh-image-caption mh-slider-category"> World</div>
-                                        <div class="mh-slider-caption">
-                                            <div class="mh-slider-content">
-                                                <h3 class="mh-slider-title">
-                                                    <a href="#" title=""> Consequat vel illum dolore eu feugiat </a>
-                                                </h3>
-                                                <div class="mh-excerpt">
-                                                    Tatvero accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                                    <nav class="mh-social-icons mh-social-nav mh-social-nav-top clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                                                        <ul>Share
-                                                            <li><a href="https://www.facebook.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                            <li><a target="_blank" href="https://twitter.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                            <li><a target="_blank" href="https://plus.google.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                            <li><a target="_blank" href="https://www.youtube.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                        </ul>
-                                                    </nav>
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </li>
-                                <li class="mh-slider-item">
-                                    <article>
-                                        <a href="#" title="">
-                                  <img width="678" height="381" src="<?php echo get_stylesheet_directory_uri()?>/images/singa.jpg" class="attachment-mh-magazine-content
-                                  size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />
-                                </a>
-                                        <div class="mh-image-caption mh-slider-category"> World</div>
-                                        <div class="mh-slider-caption">
-                                            <div class="mh-slider-content">
-                                                <h3 class="mh-slider-title">
-                                                    <a href="#" title=""> Consequat vel illum dolore eu feugiat </a>
-                                                </h3>
-                                                <div class="mh-excerpt">
-                                                    Tatvero accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                                    <nav class="mh-social-icons mh-social-nav mh-social-nav-top clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                                                        <ul>Share
-                                                            <li><a href="https://www.facebook.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                            <li><a target="_blank" href="https://twitter.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                            <li><a target="_blank" href="https://plus.google.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                            <li><a target="_blank" href="https://www.youtube.com/thescript"><i class="fa fa-mh-social"></i></a></li>
-                                                        </ul>
-                                                    </nav>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </li>
+                                <?php endwhile; else: ?>
+                                    <p>No News Today</p>
+                                <?php 
+                                    endif; 
+                                    wp_reset_postdata(); 
+                                    endforeach;
+                                ?>
                             </ul>
                         </div>
                     </div>
+
                     <!--- This segment is meant for my slider -->
 
                     <div class="clearfix">
@@ -256,7 +225,7 @@
                                     the_post_thumbnail('thumbnail' , array('class' => 'mh-custom-posts-thumb', 'title' => get_the_title()) );
                                 ?>
                                 <div class="mh-custom-posts-header">
-                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_title(); ?>"><?php echo get_title() ?> </a></div>
+                                    <div class="mh-custom-posts-small-title"> <a href="#" title="<?php echo get_the_title(); ?>"><?php echo get_title() ?> </a></div>
                                     <div class="mh-meta entry-meta"> <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="#"><?php echo get_post_time('F j, Y');?></a></span>
                                         <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link" ><?php echo wp_count_comments(); ?></a></span></div>
                                 </div>
