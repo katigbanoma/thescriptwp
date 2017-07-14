@@ -117,51 +117,58 @@
                                     while ( $the_query->have_posts() ) : $the_query->the_post();
                                 ?>
 
-                            <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
-                                <h4 class="mh-widget-title">
-                                    <span class="mh-widget-title-inner">
-                                        <a href="single.php" class="mh-widget-title-link"><?php echo strtoupper($cat->name); ?></a>
-                                    </span>
-                                    <span style="padding:15px;">
-                                        <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                        <a href="#" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
-                                        </div>
-                                    </span>
-                                </h4>
-                                <ul class="mh-custom-posts-widget clearfix">
-                                    <li class="mh-custom-posts-item mh-custom-posts-large clearfix">
-                                        <div class="mh-custom-posts-large-inner clearfix">
-                                            <figure class="mh-custom-posts-thumb-xl">
-                                                <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_title(); ?>">
-                                                    <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_uri(); ?>')"></div>
-                                                </a>
-                                            </figure>
-                                            <div class="mh-custom-posts-content">
-                                                <div class="mh-custom-posts-header">
-                                                    <h3 class="mh-custom-posts-xl-title">
-                                                        <a href="<?php echo get_permalink(); ?>" title="Esse molestie consequat vel illum dolore eu feugiat">
-                                                            <?php get_title() ; ?>
-                                                        </a>
-                                                    </h3>
-                                                    <div class="mh-meta entry-meta">
-                                                        <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
-                                                            <a href="#"><?php echo get_post_time('F j, Y'); ?></a>
-                                                        </span>
-                                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link"><?php echo wp_count_comments(); ?></a></span>
+                                <div id="mh_magazine_custom_posts-4" class="mh-widget mh-home-4 mh_magazine_custom_posts">
+                                    <h4 class="mh-widget-title">
+                                        <span class="mh-widget-title-inner">
+                                            <a href="single.php" class="mh-widget-title-link"><?php echo strtoupper($cat->name); ?></a>
+                                        </span>
+                                        <span style="padding:15px;">
+                                            <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
+                                            <a href="#" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
+                                            </div>
+                                        </span>
+                                    </h4>
+                                    <ul class="mh-custom-posts-widget clearfix">
+                                        <li class="mh-custom-posts-item mh-custom-posts-large clearfix">
+                                            <div class="mh-custom-posts-large-inner clearfix">
+                                                <figure class="mh-custom-posts-thumb-xl">
+                                                    <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" title="<?php echo get_title(); ?>">
+                                                        <div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_uri(); ?>')"></div>
+                                                    </a>
+                                                </figure>
+                                                <div class="mh-custom-posts-content">
+                                                    <div class="mh-custom-posts-header">
+                                                        <h3 class="mh-custom-posts-xl-title">
+                                                            <a href="<?php echo get_permalink(); ?>" title="Esse molestie consequat vel illum dolore eu feugiat">
+                                                                <?php get_title() ; ?>
+                                                            </a>
+                                                        </h3>
+                                                        <div class="mh-meta entry-meta">
+                                                            <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i>
+                                                                <a href="#"><?php echo get_post_time('F j, Y'); ?></a>
+                                                            </span>
+                                                            <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="#" class="mh-comment-count-link"><?php echo wp_count_comments(); ?></a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mh-excerpt">
+                                                        <?php the_excerpt(); ?>
                                                     </div>
                                                 </div>
-                                                <div class="mh-excerpt">
-                                                    <?php the_excerpt(); ?>
-                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                        </li>
+                                    </ul>
 
-                            </div>
+                                </div>
+
+                                <?php endwhile; else: ?>
+                                    <p>No News Today</p>
+                                <?php 
+                                    endif; 
+                                    wp_reset_postdata(); 
+                                    endforeach;
+                                ?>
                         </div>
                     </div>
-
 
                     <style media="screen">
                         .bg-content {
