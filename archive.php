@@ -43,7 +43,7 @@
                                       <div class="mh-meta entry-meta"> 
                                         <span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="<?php echo get_permalink() ?>"><?php echo get_post_time('F j, Y')?></a></span>
                                         <span class="entry-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="<?php echo get_the_author_link() ?>"><?php get_the_author(); ?></a></span>
-                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="<?php echo get_permalink(); ?>" class="mh-comment-count-link" ><?php echo wp_count_comments() ?></a></span>
+                                        <span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a href="<?php echo get_permalink(); ?>" class="mh-comment-count-link" ><?php echo wp_count_comments()->total_comments ?></a></span>
                                       </div>
                                   </header>
                                   <div class="mh-posts-list-excerpt clearfix">
