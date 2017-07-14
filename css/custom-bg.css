@@ -16,7 +16,7 @@ img.emoji {
 }
 
 body.custom-background {
-    background-image: url("../../images/background-mhmag1.jpg");
+    background-image: url("../images/background-mhmag1.jpg");
     background-position: right top;
     background-size: cover;
     background-repeat: no-repeat;
