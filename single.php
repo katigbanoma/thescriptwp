@@ -59,22 +59,22 @@ get_header(); ?>
                             <!--<div class="bg-content" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>-->
 
 
-                            <figure class="entry-thumbnail"> <img src="<?php echo get_stylesheet_directory_uri()?>/images/berlin-678x381.jpg" alt="Berlin" title="Berlin" />
+                            <figure class="entry-thumbnail"> <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title() ?>" title="<?php echo get_the_title() ?>" />
                                 <figcaption class="wp-caption-text">Image Credit: The Script Photography</figcaption>
                             </figure>
 
                             <?php the_content(); ?>
-
+                            
                             <!-- TODO: Implement Social Plugin as a template -->
                             <div class="mh-social-bottom">
                                 <div class="mh-share-buttons clearfix">
-                                    <a class="mh-facebook" href="#" onclick="window.open('https://www.facebook.com/sharer.php?u=' . <?php url_encode(get_permalink()); ?>, 'facebookShare', 'width=626,height=436'); return false;"
+                                    <a class="mh-facebook" href="#" onclick="window.open('https://www.facebook.com/sharer.php?u='<?php echo urlencode(get_permalink()); ?>, 'facebookShare', 'width=626,height=436'); return false;"
                                         title="Share on Facebook"> <span class="mh-share-button"><i class="fa fa-facebook"></i></span> </a>
-                                    <a class="mh-twitter" href="#" onclick="window.open('https://twitter.com/share?url=<?php url_encode(get_permalink()); ?>', 'twitterShare', 'width=626,height=436'); return false;"
+                                    <a class="mh-twitter" href="#" onclick="window.open('https://twitter.com/share?url=<?php echo urlencode(get_permalink()); ?>', 'twitterShare', 'width=626,height=436'); return false;"
                                         title="Tweet This Post"> <span class="mh-share-button"><i class="fa fa-twitter"></i></span> </a>
-                                    <a class="mh-pinterest" href="#" onclick="window.open('https://pinterest.com/pin/create/button/?url=<?php url_encode(get_permalink()); ?>', 'pinterestShare', 'width=750,height=350'); return false;"
+                                    <a class="mh-pinterest" href="#" onclick="window.open('https://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink()); ?>', 'pinterestShare', 'width=750,height=350'); return false;"
                                         title="Pin This Post"> <span class="mh-share-button"><i class="fa fa-pinterest"></i></span> </a>
-                                    <a class="mh-googleplus" href="#" onclick="window.open('https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php url_encode(get_permalink()); ?>', 'googleShare', 'width=626,height=436'); return false;"
+                                    <a class="mh-googleplus" href="#" onclick="window.open('https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=<?php echo urlencode(get_permalink()); ?>', 'googleShare', 'width=626,height=436'); return false;"
                                         title="Share on Google+" target="_blank"> <span class="mh-share-button"><i class="fa fa-google-plus"></i></span> </a>
                                     <a class="mh-email" href="#" title="Send this article to a friend" target="_blank"> <span class="mh-share-button"><i class="fa fa-envelope-o"></i></span> </a>
                                 </div>

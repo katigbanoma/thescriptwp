@@ -76,7 +76,7 @@
                     <div class="mh-header-columns mh-row clearfix">
                         <div class="mh-col-1-3 mh-site-identity" style="margin-left:360px;">
                             <div class="mh-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
-                                <a href="index.php" class="custom-logo-link" rel="home" itemprop="url">
+                                <a href="<?php echo get_home_url()?>" class="custom-logo-link" rel="home" itemprop="url">
                 <img width="300" height="100" src="<?php echo get_stylesheet_directory_uri()?>/images/thescript.PNG" class="custom-logo" alt="" itemprop="logo" /></a>
                             </div>
                         </div>
