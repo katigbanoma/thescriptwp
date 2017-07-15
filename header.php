@@ -38,13 +38,12 @@
                     <aside class="mh-header-search mh-header-search-bottom">
                         <form role="search" method="get" class="search-form" action="">
                             <input type="search" placeholder="Search" />
-                            <a href="#" id="search-btn">
-              <i class="fa fa-search"></i>
-            </a>
-                            <button type="button" name="button" class="btn-sub">
-              Subcribe!
-            </button>
+                            <input type="submit" id="search-btn"/><i class="fa fa-search"></i>
                         </form>
+
+                        <button type="button" name="button" class="btn-sub">
+                            Subcribe!
+                        </button>
                     </aside>
                 </div>
                 <style>
@@ -142,7 +141,7 @@
                                     <li class="mh-ticker-item mh-ticker-item-bottom">
                                         <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_excerpt(); ?>">
                                             <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ <?php echo get_post_time('F j, Y')?> ] </span>
-                                            <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> <?php echo get_excerpt(20); ?> </span>
+                                            <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> <?php echo the_excerpt(); ?> </span>
                                             <?php
                                                 $category = get_the_category(); 
                                                 $category_link = get_category_link($category[0]->cat_ID);
