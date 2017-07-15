@@ -31,7 +31,7 @@
                                 <li class="mh-slider-item">
                                     <article>
                                         <a href="<?php get_permalink(); ?>" title="<?php echo get_the_title() ?>">
-                                            <div style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>); width: 678p; height:381px; background-position: cover;"></div>
+                                            <div style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>); width: 678p; height:381px; background-size: cover;"></div>
                                         </a>
                                         <div class="mh-image-caption mh-slider-category"> <?php echo strtoupper($cat->name); ?></div>
                                         <div class="mh-slider-caption">
