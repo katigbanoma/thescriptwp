@@ -30,13 +30,8 @@
 
                                 <li class="mh-slider-item">
                                     <article>
-                                        <a href="#" title="">
-
+                                        <a href="<?php get_permalink(); ?>" title="<?php echo get_the_title() ?>">
                                             <div style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>); width: 678p; height:381px; background-position: cover;"></div>
-
-                                            
-                                            <!--<img width="678" height="381" src="<?php echo get_the_post_thumbnail_url() ?>" class="attachment-mh-magazine-content
-                                            size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />-->
                                         </a>
                                         <div class="mh-image-caption mh-slider-category"> <?php echo strtoupper($cat->name); ?></div>
                                         <div class="mh-slider-caption">
@@ -45,7 +40,7 @@
                                                     <a href="#" title=""> <?php echo get_the_title() ?> </a>
                                                 </h3>
                                                 <div class="mh-excerpt">
-                                                    <?php echo get_the_excerpt(); ?>
+                                                    <?php echo get_excerpt(40); ?>
                                                     <nav class="mh-social-icons mh-social-nav mh-social-nav-top clearfix">
                                                         <ul>Share
                                                             <li><a href="https://www.facebook.com/thescript"><i class="fa fa-mh-social"></i></a></li>
