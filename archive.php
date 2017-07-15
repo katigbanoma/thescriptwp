@@ -46,9 +46,15 @@
                                   </header>
                                   <div class="mh-posts-list-excerpt clearfix">
                                       <div class="mh-excerpt">
-                                          <?php get_excerpt(80); ?>
+                                          <?php echo get_excerpt(80); ?>
                                       </div>
                                   </div>
+
+                                  <style>
+                                    .mh-excerpt{
+                                      overflow: hidden;
+                                    }
+                                  </style>
                               </div>
                           </article>
 
