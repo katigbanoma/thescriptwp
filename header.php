@@ -142,7 +142,7 @@
                                     <li class="mh-ticker-item mh-ticker-item-bottom">
                                         <a href="<?php echo get_permalink(); ?>" title="<?php echo get_the_excerpt(); ?>">
                                             <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ <?php echo get_post_time('F j, Y')?> ] </span>
-                                            <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> <?php echo get_the_excerpt(); ?> </span>
+                                            <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> <?php echo get_excerpt(20); ?> </span>
                                             <?php
                                                 $category = get_the_category(); 
                                                 $category_link = get_category_link($category[0]->cat_ID);

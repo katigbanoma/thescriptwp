@@ -25,7 +25,7 @@
                     <?php if ( have_posts()): ?>
                         <?php
                             while ( have_posts() ) : the_post();
-                                $background_image = has_post_thumbnail() ?  'style="width: 326; height:245; background-image: url(' . get_the_post_thumbnail_url() . ')"' : '';
+                                $background_image = has_post_thumbnail() ?  'style="width: 326px; height:245px; background-image: url(' . get_the_post_thumbnail_url() . ')"' : '';
                             ?>
 
                             <article class="mh-posts-list-item clearfix">
@@ -46,7 +46,7 @@
                                   </header>
                                   <div class="mh-posts-list-excerpt clearfix">
                                       <div class="mh-excerpt">
-                                          <?php get_excerpt(80, 'content'); ?>
+                                          <?php get_excerpt(80); ?>
                                       </div>
                                   </div>
                               </div>

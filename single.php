@@ -95,6 +95,26 @@ get_header(); ?>
                         to www.thescript.com.ng as the source.
                     </div>
 
+                    <!--Ad Section-->
+                    <div id="text-4" class="mh-widget mh-posts-2 widget_text">
+                        <div class="textwidget">
+                            <div class="mh-ad-label">Advertisement</div>
+                            <div class="mh-ad-area">
+                                <div style="font-size: 13px; padding: 0.5em; background: #f5f5f5; border: 1px solid #ebebeb; text-align: center;">
+                                    <a target="_blank" href="#" title="Purchase MH Magazine Premium">Here you can place more advertisements and banners</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Ad Section Ends-->
+
+                    <div id="comments" class="mh-comments-wrap">
+                        <!-- TODO: Implement Disqus -->
+                        <?php 
+                            // If comments are open or we have at least one comment, load up the comment template.
+                             comments_template( '', true );
+                        ?>
+                    </div>
+
                     <!-- Quick Links to Next and Previous Post -->
                     <nav class="mh-post-nav mh-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
                         <?php 
@@ -118,25 +138,7 @@ get_header(); ?>
                     </nav>
                     <!-- Quick Links to Next and Previous Post Ends -->
 
-                    <!--Ad Section-->
-                    <div id="text-4" class="mh-widget mh-posts-2 widget_text">
-                        <div class="textwidget">
-                            <div class="mh-ad-label">Advertisement</div>
-                            <div class="mh-ad-area">
-                                <div style="font-size: 13px; padding: 0.5em; background: #f5f5f5; border: 1px solid #ebebeb; text-align: center;">
-                                    <a target="_blank" href="#" title="Purchase MH Magazine Premium">Here you can place more advertisements and banners</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Ad Section Ends-->
-
-                    <div id="comments" class="mh-comments-wrap">
-                        <!-- TODO: Implement Disqus -->
-                        <?php 
-                            // If comments are open or we have at least one comment, load up the comment template.
-                             comments_template( '', true );
-                        ?>
-                    </div>
+                    
                 </div>
 
                 <!-- Sidebar starts here -->
