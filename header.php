@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri()?>/style.css" />
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri()?>/font-awesome/css/font-awesome.min.css" />
+
     <script src="<?php echo get_stylesheet_directory_uri()?>/js/jq0.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri()?>/js/jq1.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri()?>/js/jq2.js"></script>
