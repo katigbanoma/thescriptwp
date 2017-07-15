@@ -31,3 +31,11 @@ ul.social-links li {
     padding: 0 10px;
     color: white;
 }
+
+/*View More Button */
+.view-more-btn{
+    float:right; 
+    background-color:#ccc; 
+    font-size:8pt; 
+    padding:4px;
+}

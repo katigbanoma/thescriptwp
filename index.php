@@ -31,9 +31,13 @@
                                 <li class="mh-slider-item">
                                     <article>
                                         <a href="#" title="">
-                                                    <img width="678" height="381" src="<?php echo get_the_post_thumbnail_url() ?>" class="attachment-mh-magazine-content
-                                                    size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />
-                                                    </a>
+
+                                            <div style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>); width: 678p; height:381px; background-position: cover;"></div>
+
+                                            
+                                            <!--<img width="678" height="381" src="<?php echo get_the_post_thumbnail_url() ?>" class="attachment-mh-magazine-content
+                                            size-mh-magazine-content wp-post-image" sizes="(max-width: 678px) 100vw, 678px" />-->
+                                        </a>
                                         <div class="mh-image-caption mh-slider-category"> <?php echo strtoupper($cat->name); ?></div>
                                         <div class="mh-slider-caption">
                                             <div class="mh-slider-content">
@@ -93,7 +97,7 @@
                                         </span>
                                         <span style="padding:15px;">
                                             <div style="display:inline" style="font-size:5px; background:#000; border:1px solid #000; float:right">
-                                            <a href="<?php echo get_permalink() ;?>" style="float:right; background-color:#ccc; font-size:8pt; padding:4px;">VIEW MORE</a>
+                                            <a class="view-more-btn" href="<?php echo get_category_link( $cat->term_id ); ?>">VIEW MORE</a>
                                             </div>
                                         </span>
                                     </h4>

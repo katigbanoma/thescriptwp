@@ -106,28 +106,18 @@
                         );
 
                         wp_nav_menu( $defaults );
-
                         ?>
-                                        
-                    <!--<div class="menu-navigation-container">
-                        <ul id="menu-navigation" class="menu">
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="single.php">Politics</a></li>
-                            <li><a href="single.php">World</a></li>
-                            <li><a href="single.php">Nigeria</a></li>
-                            <li><a href="single.php">Economy</a></li>
-                            <li><a href="single.php">Health</a></li>
-                            <li><a href="#">More</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#"> Education</a></li>
-                                    <li><a href="#">  Music</a></li>
-                                    <li><a href="#">Comedy</a></li>
-                                    <li><a href="#"> Money</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>-->
                 </nav>
+
+                <style>
+                    .sub-menu:after {
+                        content: "\f0d7";
+                        font-family: FontAwesome;
+                        left:-5px;
+                        position:absolute;
+                        top:0;
+                    }
+                </style>
             </div>
         </header>
 
@@ -150,7 +140,7 @@
                                     ?>
 
                                     <li class="mh-ticker-item mh-ticker-item-bottom">
-                                        <a href="single.php" title="Consequat vel illum dolore eu feugiat">
+                                        <a href="<?php echo get_permalink(); ?>" title="Consequat vel illum dolore eu feugiat">
                                             <span class="mh-ticker-item-date mh-ticker-item-date-bottom"> [ <?php echo get_post_time('F j, Y')?> ] </span>
                                             <span class="mh-ticker-item-title mh-ticker-item-title-bottom"> <?php echo get_the_excerpt(); ?> </span>
                                             <?php
