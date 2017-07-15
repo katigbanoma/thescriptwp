@@ -46,7 +46,7 @@
                                   </header>
                                   <div class="mh-posts-list-excerpt clearfix">
                                       <div class="mh-excerpt">
-                                          <?php echo get_excerpt(320); ?>
+                                          <?php the_excerpt(); ?>
                                       </div>
                                   </div>
 

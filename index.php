@@ -40,7 +40,7 @@
                                                     <a href="<?php echo get_permalink(); ?>" title=""> <?php echo get_the_title() ?> </a>
                                                 </h3>
                                                 <div class="mh-excerpt">
-                                                    <?php echo get_excerpt(40); ?>
+                                                    <?php echo get_excerpt(80); ?>
                                                     <nav class="mh-social-icons mh-social-nav mh-social-nav-top clearfix">
                                                         <ul>Share
                                                             <li><a href="https://www.facebook.com/thescript"><i class="fa fa-mh-social"></i></a></li>
