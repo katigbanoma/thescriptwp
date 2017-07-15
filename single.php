@@ -95,52 +95,28 @@ get_header(); ?>
                         to www.thescript.com.ng as the source.
                     </div>
 
-
+                    <!-- Quick Links to Next and Previous Post -->
                     <nav class="mh-post-nav mh-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                        <!--<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-prev">
-                            <a href="#" rel="prev"><img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/protest-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Protest"  sizes="(max-width: 80px) 100vw, 80px" /><span>Previous</span>
-                                    <p>The incessant lynching of humans continue</p>
-                                  </a>
-                        </div>
-                        <div class="mh-col-1-2 mh-post-nav-item mh-post-nav-next">
-                            <a href="#" rel="next"><img width="80" height="60" src="<?php echo get_stylesheet_directory_uri()?>/images/river_london-80x60.jpg" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="River London"  sizes="(max-width: 80px) 100vw, 80px" /><span>Next</span>
-                                    <p>How the group called badoo started</p>
-                                  </a>
-                        </div>-->
-
-                        <div id="cooler-nav" class="navigation">
-                            <?php $prevPost = get_previous_post(true);
-                            if($prevPost): ?>
-                                <div class="nav-box previous">
-                                    <?php 
-                                        $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );
-                                        previous_post_link('%link',"$prevthumbnail  <p>%title</p>", TRUE); 
-                                    ?>
-                                </div>
-
-                                <?php 
-                                    endif; 
-                                    $nextPost = get_next_post(true);
-                                    if($nextPost) : 
-                                ?>
-                                <div class="nav-box next" style="float:right;">
-                                    <?php 
-                                        $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) ); 
-                                        next_post_link('%link',"$nextthumbnail  <p>%title</p>", TRUE); 
-                                    ?>
-                                </div>
-                                <?php endif; ?>
-                            </div><!--#cooler-nav div -->
-
-                            <style>
-                                #cooler-nav{clear: both; height: 100px; margin: 0 0 70px;}
-                                #cooler-nav .nav-box{background: #e9e9e9; padding: 10px;}
-                                #cooler-nav img{float: left; margin: 0 10px 0 0;}
-                                #cooler-nav p{margin: 0 10px; font-size: 12px; vertical-align: middle;}
-                                #cooler-nav .previous{float: left; vertical-align: middle; width: 250px; height: 100px;}
-                                #cooler-nav .next{float: right; width: 250px;}
-                            </style>
+                        <?php 
+                            $prevPost = get_previous_post(true); 
+                            if($prevPost):
+                                $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(80,60) );
+                        ?>
+                            <div class="mh-col-1-2 mh-post-nav-item mh-post-nav-prev">
+                                <?php previous_post_link('%link',"$prevthumbnail  <p>%title</p>", TRUE); ?>
+                            </div>
+                        <?php 
+                            endif; 
+                            $nextPost = get_next_post(true); 
+                            if($nextPost) :
+                                $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(80,60) );
+                        ?>
+                            <div class="mh-col-1-2 mh-post-nav-item mh-post-nav-next">
+                                <?php next_post_link('%link',"$nextthumbnail  <p>%title</p>", TRUE); ?>
+                            </div>
+                        <?php endif; ?>
                     </nav>
+                    <!-- Quick Links to Next and Previous Post Ends -->
 
                     <!--Ad Section-->
                     <div id="text-4" class="mh-widget mh-posts-2 widget_text">
@@ -156,6 +132,12 @@ get_header(); ?>
 
                     <div id="comments" class="mh-comments-wrap">
                         <!-- TODO: Implement Disqus -->
+                        <?php 
+                            // If comments are open or we have at least one comment, load up the comment template.
+                            if ( comments_open() || get_comments_number() ) :
+                                comments_template();
+                            endif;
+                        ?>
                     </div>
                 </div>
 
@@ -167,7 +149,8 @@ get_header(); ?>
                         <div class="textwidget">
                             <div class="mh-ad-spot">
                                 <a href="#" target="_blank">
-                                        <img alt="MH Themes" src="<?php echo get_stylesheet_directory_uri()?>/images/ad-300x250-mh-magazine.png"> </a>
+                                    <img alt="MH Themes" src="<?php echo get_stylesheet_directory_uri()?>/images/ad-300x250-mh-magazine.png"> 
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -186,19 +169,21 @@ get_header(); ?>
                             ?>
 
                             <li class="mh-nip-item">
-                                <a class="mh-thumb-icon mh-thumb-icon-small" href="#" title="<?php echo get_the_title(); ?>">
-                                    <img width="80" height="60" src="<?php echo get_the_post_thumbnail_url() ?>" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Wallet"  sizes="(max-width: 80px) 100vw, 80px" />
+                                <a class="mh-thumb-icon mh-thumb-icon-small" href="<?php get_permalink() ?>" title="<?php echo get_the_title(); ?>">
+                                    <!--<img width="80" height="60" src="" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image" alt="Wallet"  sizes="(max-width: 80px) 100vw, 80px" />-->
+                                    <div style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>'); width: 80px; height: 60px; background-position: cover;"></div>
                                     <div class="mh-nip-overlay"></div>
                                 </a>
                             </li>
 
                             <?php endwhile; else: ?>
-                                <p>No News for Today</p>
+                                <p>No News</p>
                             <?php endif; wp_reset_postdata(); ?>
 
                         </ul>
                     </div>
 
+                   <!-- Sidebar -->
                     <?php get_sidebar(); ?>
 
                     <!-- Ad Section -->
