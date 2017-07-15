@@ -37,7 +37,7 @@
                                         <div class="mh-slider-caption">
                                             <div class="mh-slider-content">
                                                 <h3 class="mh-slider-title">
-                                                    <a href="#" title=""> <?php echo get_the_title() ?> </a>
+                                                    <a href="<?php get_permalink(); ?>" title=""> <?php echo get_the_title() ?> </a>
                                                 </h3>
                                                 <div class="mh-excerpt">
                                                     <?php echo get_excerpt(40); ?>

@@ -25,15 +25,15 @@
                     <?php if ( have_posts()): ?>
                         <?php
                             while ( have_posts() ) : the_post();
-                                $background_image = has_post_thumbnail() ?  'style="background-image: url(' . get_the_post_thumbnail_url() . ')"' : '';
+                                $background_image = has_post_thumbnail() ?  'style="width: 100%; height:245; background-image: url(' . get_the_post_thumbnail_url() . ')"' : '';
                             ?>
 
                             <article class="mh-posts-list-item clearfix">
-                              <figure class="mh-posts-list-thumb">
-                                  <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>">
-                                    <img width="326" height="245" src="<?php echo get_the_post_thumbnail_url(); ?>" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image" alt="Army" sizes="(max-width: 326px) 100vw, 326px" /> </a>
-                                  <div class="mh-image-caption mh-posts-list-caption"><?php the_archive_title(); ?>
-</div>
+                              <figure class="mh-posts-list-thumb" >
+                                  <a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="<?php echo get_permalink(); ?>" <?php echo $background_image; ?>>
+                                    <!--<img width="326" height="245" src="<?php echo get_the_post_thumbnail_url(); ?>" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image" alt="Army" sizes="(max-width: 326px) 100vw, 326px" />-->
+                                    </a>
+                                  <div class="mh-image-caption mh-posts-list-caption"><?php the_archive_title(); ?></div>
                               </figure>
                               <div class="mh-posts-list-content clearfix">
                                   <header class="mh-posts-list-header">

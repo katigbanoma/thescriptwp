@@ -55,13 +55,7 @@ function hook_css() {
 add_action('wp_head', 'hook_css');
 
 
-// Add read-more link to post
-// Changing excerpt more
-function new_excerpt_more($more) {
-   global $post;
-   return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
+
 
 
 
@@ -83,6 +77,19 @@ function pagination_bar() {
         ));
     }
 }
+
+
+/*
+**  Excerpt 
+*/
+
+// Add read-more link to post
+// Changing excerpt more
+function new_excerpt_more($more) {
+   global $post;
+   return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 // Excerpt Limit word count
 function custom_excerpt_length( $length ) {
